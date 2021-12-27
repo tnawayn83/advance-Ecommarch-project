@@ -21,11 +21,11 @@ class BrandController extends Controller
 
     	$request->validate([
     		'brand_name_en' => 'required',
-    		'brand_name_ba' => 'required',
+    		'brand_name_bn' => 'required',
     		'brand_image' => 'required',
     	],[
     		'brand_name_en.required' => 'Input Brand English Name',
-    		'brand_name_ba.required' => 'Input Brand Bangla Name',
+    		'brand_name_bn.required' => 'Input Brand Bangla Name',
     	]);
 
     	$image = $request->file('brand_image');
@@ -35,9 +35,9 @@ class BrandController extends Controller
 
 	Brand::insert([
 		'brand_name_en' => $request->brand_name_en,
-		'brand_name_ba' => $request->brand_name_ba,
+		'brand_name_bn' => $request->brand_name_bn,
 		'brand_slug_en' => strtolower(str_replace(' ', '-',$request->brand_name_en)),
-		'brand_slug_ba' => str_replace(' ', '-',$request->brand_name_ba),
+		'brand_slug_bn' => str_replace(' ', '-',$request->brand_name_bn),
 		'brand_image' => $save_url,
 
     	]);
@@ -75,9 +75,9 @@ class BrandController extends Controller
 
 	Brand::findOrFail($brand_id)->update([
 		'brand_name_en' => $request->brand_name_en,
-		'brand_name_ba' => $request->brand_name_ba,
+		'brand_name_bn' => $request->brand_name_bn,
 		'brand_slug_en' => strtolower(str_replace(' ', '-',$request->brand_name_en)),
-		'brand_slug_ba' => str_replace(' ', '-',$request->brand_name_ba),
+		'brand_slug_bn' => str_replace(' ', '-',$request->brand_name_bn),
 		'brand_image' => $save_url,
 
     	]);
@@ -93,9 +93,9 @@ class BrandController extends Controller
 
     	Brand::findOrFail($brand_id)->update([
 		'brand_name_en' => $request->brand_name_en,
-		'brand_name_ba' => $request->brand_name_ba,
+		'brand_name_bn' => $request->brand_name_bn,
 		'brand_slug_en' => strtolower(str_replace(' ', '-',$request->brand_name_en)),
-		'brand_slug_ba' => str_replace(' ', '-',$request->brand_name_ba),
+		'brand_slug_bn' => str_replace(' ', '-',$request->brand_name_bn),
 
 
     	]);
