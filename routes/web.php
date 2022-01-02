@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,12 +22,13 @@ use App\Http\Controllers\Frontend\LanguageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware(['auth:admin'])->group(function(){
+
 
 Route::group(['prefix'=>'admin','middleware'=>['admin:admin']], function () {
     Route::get('/login', [AdminController::class, 'loginForm']);
     Route::post('/login', [AdminController::class, 'store'])->name('admin.login');
 });
+Route::middleware(['auth:admin'])->group(function(){
 Route::post('/admin/logout', [AdminController::class,'destroy'])->name('admin.logout')->middleware('auth:admin');
 
 Route::post('/logout', LogoutController::class)->name('logout')->middleware('auth:web');

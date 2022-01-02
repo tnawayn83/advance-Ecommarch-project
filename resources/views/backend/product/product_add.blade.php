@@ -20,7 +20,15 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
   <form method="post" action="{{ route('product-store') }}" enctype="multipart/form-data" >
 		 	@csrf
 
@@ -447,15 +455,7 @@
 
 
 
-<div class="col-md-6">
 
-	    <div class="form-group">
-			<h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>
-			<div class="controls">
-	 <input type="file" name="file" class="form-control" >
-
-	 		 </div>
-		</div>
 
 
 			</div> <!-- end col md 4 -->

@@ -7,7 +7,9 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="module-heading">
-              <h4 class="module-title">Contact Us</h4>
+              <h4 class="module-title">
+                @if(session()->get('language') == 'bangla') যোগাযোগ করুন @else Contact Us @endif
+                </h4>
             </div>
             <!-- /.module-heading -->
 
@@ -38,17 +40,29 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="module-heading">
-              <h4 class="module-title">Customer Service</h4>
+              <h4 class="module-title">
+                @if(session()->get('language') == 'bangla') গ্রাহক সেবা @else Customer Service @endif
+                </h4>
             </div>
             <!-- /.module-heading -->
 
             <div class="module-body">
               <ul class='list-unstyled'>
-                <li class="first"><a href="#" title="Contact us">My Account</a></li>
-                <li><a href="#" title="About us">Order History</a></li>
-                <li><a href="#" title="faq">FAQ</a></li>
-                <li><a href="#" title="Popular Searches">Specials</a></li>
-                <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
+                <li class="first"><a href="#" title="Contact us">
+                    @if(session()->get('language') == 'bangla') আমার অ্যাকাউন্ট @else My Account @endif
+                </a></li>
+                <li><a href="#" title="About us">
+                    @if(session()->get('language') == 'bangla') অর্ডার ইতিহাস @else Order History @endif Order History
+                </a></li>
+                <li><a href="#" title="faq">
+                    @if(session()->get('language') == 'bangla') FAQ @else FAQ @endif
+                </a></li>
+                <li><a href="#" title="Popular Searches">
+                    @if(session()->get('language') == 'bangla') বিশেষ @else Specials @endif
+                </a></li>
+                <li class="last"><a href="#" title="Where is my order?">
+                    @if(session()->get('language') == 'bangla') সাহায্য কেন্দ্র @else Help Center @endif
+                </a></li>
               </ul>
             </div>
             <!-- /.module-body -->
@@ -63,11 +77,21 @@
 
             <div class="module-body">
               <ul class='list-unstyled'>
-                <li class="first"><a title="Your Account" href="#">About us</a></li>
-                <li><a title="Information" href="#">Customer Service</a></li>
-                <li><a title="Addresses" href="#">Company</a></li>
-                <li><a title="Addresses" href="#">Investor Relations</a></li>
-                <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
+                <li class="first"><a title="Your Account" href="#">
+                    @if(session()->get('language') == 'bangla') আমাদের সম্পর্কে @else About us @endif
+                </a></li>
+                <li><a title="Information" href="#">
+                    @if(session()->get('language') == 'bangla') গ্রাহক সেবা @else Customer Service @endif
+                </a></li>
+                <li><a title="Addresses" href="#">
+                    @if(session()->get('language') == 'bangla') প্রতিষ্ঠান@else Company @endif
+                </a></li>
+                <li><a title="Addresses" href="#">
+                    @if(session()->get('language') == 'bangla') বিনিয়োগকারী সম্পর্ক @else Investor Relations @endif
+                </a></li>
+                <li class="last"><a title="Orders History" href="#">
+                    @if(session()->get('language') == 'bangla') উন্নত অনুসন্ধান @else Advanced Search @endif
+                </a></li>
               </ul>
             </div>
             <!-- /.module-body -->
