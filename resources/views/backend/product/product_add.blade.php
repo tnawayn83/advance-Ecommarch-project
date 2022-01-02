@@ -20,15 +20,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-                    @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+
   <form method="post" action="{{ route('product-store') }}" enctype="multipart/form-data" >
 		 	@csrf
 
@@ -232,7 +224,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Size Ban <span class="text-danger">*</span></h5>
+			<h5>Product Size Bn <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_size_bn" class="form-control" value="Small,Midium,Large" data-role="tagsinput" required="">
      @error('product_size_bn')
@@ -400,7 +392,7 @@
 	     <div class="form-group">
 			<h5>Long Description Bangla <span class="text-danger">*</span></h5>
 			<div class="controls">
-	<textarea id="editor2" name="long_descp_bn" rows="10" cols="80">
+	<textarea id="editor2" name="long_descp_hin" rows="10" cols="80">
 		Long Description Bangla
 						</textarea>
 	 		 </div>
@@ -456,9 +448,6 @@
 
 
 
-
-
-			</div> <!-- end col md 4 -->
 
 
 
