@@ -41,7 +41,7 @@
 	 <tr>
 		<td> <img src="{{ asset($item->product_thambnail) }}" style="width: 60px; height: 50px;">  </td>
 		<td>{{ $item->product_name_en }}</td>
-		 <td>{{ $item->selling_price }} $</td>
+		 <td>{{ $item->selling_price }} TK</td>
 		 <td>{{ $item->product_qty }} Pic</td>
 
 		 <td>
