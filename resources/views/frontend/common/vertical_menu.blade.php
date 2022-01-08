@@ -26,6 +26,8 @@ $subcategories = App\Models\SubCategory::where('category_id',$category->id)->ord
        @foreach($subcategories as $subcategory)
                 <div class="col-sm-12 col-md-3">
 
+<!--   //  SubCategory ling -->
+
 <a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
 <h2 class="title">
 @if(session()->get('language') == 'bangla') {{ $subcategory->subcategory_name_bn }} @else {{ $subcategory->subcategory_name_en }} @endif
