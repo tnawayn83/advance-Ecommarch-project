@@ -10,6 +10,7 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\category;
 use App\Models\subcategory;
+use App\Models\subsubcategory;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Hash;
 use App\Models\MultiImg;
@@ -138,19 +139,21 @@ public function SubCatWiseProduct(Request $request, $subcat_id,$slug){
     $breadsubcat = SubCategory::with(['category'])->where('id',$subcat_id)->get();
 
 
-    ///  Load More Product with Ajax 
-    if ($request->ajax()) {
-$grid_view = view('frontend.product.grid_view_product',compact('products'))->render();
-
-$list_view = view('frontend.product.list_view_product',compact('products'))->render();
-return response()->json(['grid_view' => $grid_view,'list_view',$list_view]);	
-
-    }
-    ///  End Load More Product with Ajax 
-
     return view('frontend.product.subcategory_view',compact('products','categories','breadsubcat'));
 
 }
+
+// Sub-Subcategory wise data
+
+	public function SubSubCatWiseProduct($subsubcat_id,$slug){
+		$products = Product::where('status',1)->where('subsubcategory_id',$subsubcat_id)->orderBy('id','DESC')->paginate(6);
+		$categories = Category::orderBy('category_name_en','ASC')->get();
+
+		$breadsubsubcat = SubSubCategory::with(['category','subcategory'])->where('id',$subsubcat_id)->get();
+
+		return view('frontend.product.sub_subcategory_view',compact('products','categories','breadsubsubcat'));
+
+	}
 
 }
 
