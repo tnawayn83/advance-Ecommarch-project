@@ -312,7 +312,7 @@
 
             </div><!-- /.single-product-gallery-item -->
              @endforeach
-    
+
         </div><!-- /.single-product-slider -->
 
 
@@ -390,7 +390,7 @@
                                        @endif
                                         </div>
                                     </div>
-                                    
+
 
 									<div class="col-sm-6">
 										<div class="favorite-button m-t-10">
@@ -408,6 +408,63 @@
 
 								</div><!-- /.row -->
 							</div><!-- /.price-container -->
+
+
+<!--     /// Add Product Color And Product Size ///// -->
+
+<div class="row">
+
+
+	<div class="col-sm-6">
+
+<div class="form-group">
+
+	<label class="info-title control-label">Choose Color <span> </span></label>
+	<select class="form-control unicase-form-control selectpicker" style="display: none;" id="color">
+		<option selected="" disabled="">--Choose Color--</option>
+		@foreach($product_color_en as $color)
+		<option value="{{ $color }}">{{ ucwords($color) }}</option>
+		 @endforeach
+	</select>
+
+</div> <!-- // end form group -->
+
+	</div> <!-- // end col 6 -->
+
+		<div class="col-sm-6">
+
+<div class="form-group">
+	@if($product->product_size_en == null)
+
+	@else
+
+	<label class="info-title control-label">Choose Size <span> </span></label>
+	<select class="form-control unicase-form-control selectpicker" style="display: none;" id="size">
+		<option selected="" disabled="">--Choose Size--</option>
+		@foreach($product_size_en as $size)
+		<option value="{{ $size }}">{{ ucwords($size) }}</option>
+		 @endforeach
+	</select>
+
+	@endif
+
+</div> <!-- // end form group -->
+
+
+		</div> <!-- // end col 6 -->
+
+	 </div><!-- /.row -->
+
+
+
+ <!--     /// End Add Product Color And Product Size ///// -->
+
+
+
+
+
+
+
 
 							<div class="quantity-container info-container">
 								<div class="row">
@@ -435,10 +492,6 @@
 
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
-
-
-
-
 
 
 						</div><!-- /.product-info -->
@@ -944,7 +997,7 @@
 			</div><!-- /.col -->
 			<div class="clearfix"></div>
 		</div><!-- /.row -->
-       
+
     </div>
 
 
