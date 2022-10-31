@@ -68,7 +68,21 @@
 
 
 
+        <li class="treeview ">
+          <a href="#">
+            <i data-feather="file"></i>
+            <span>Coupons</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ route('manage-coupon') }}"><a href="{{ route('manage-coupon') }}"><i class="ti-more"></i>Manage Coupon</a></li>
 
+
+
+          </ul>
+        </li>         
 
         
 

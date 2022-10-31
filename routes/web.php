@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
+use App\Http\Controllers\Backend\CouponController;
 
 /*
 |--------------------------------------------------------------------------
@@ -195,3 +196,13 @@ Route::get('/subcategory/product/{subcat_id}/{slug}', [IndexController::class, '
 
 // Frontend Sub-SubCategory wise Data
 Route::get('/subsubcategory/product/{subsubcat_id}/{slug}', [IndexController::class, 'SubSubCatWiseProduct']);
+
+
+// Admin Coupons All Routes 
+
+Route::prefix('coupons')->group(function(){
+
+    Route::get('/view', [CouponController::class, 'CouponView'])->name('manage-coupon');
+    
+    
+    });
