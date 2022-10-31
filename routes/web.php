@@ -238,6 +238,19 @@ Route::prefix('shipping')->group(function(){
 
     Route::get('/district/delete/{id}', [ShippingAreaController::class, 'DistrictDelete'])->name('district.delete');
 
+// Ship State 
+Route::get('/state/view', [ShippingAreaController::class, 'StateView'])->name('manage-state');
+
+Route::post('/statet/store', [ShippingAreaController::class, 'stateStore'])->name('state.store');
+
+Route::get('/state/edit/{id}', [ShippingAreaController::class, 'stateEdit'])->name('state.edit');
+
+Route::post('/state/update/{id}', [ShippingAreaController::class, 'stateUpdate'])->name('state.update');
+
+Route::get('/state/delete/{id}', [ShippingAreaController::class, 'stateDelete'])->name('state.delete');
+
+
+
 
 
 });
